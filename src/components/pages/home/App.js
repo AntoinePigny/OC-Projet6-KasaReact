@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import './App.css'
 import RentalList from '../../layout/rentalList/RentalList'
+import Header from '../../layout/header/Header'
+import Footer from '../../layout/footer/Footer'
 
 export default function App() {
    const [rentals, setRentals] = useState([])
@@ -21,7 +23,9 @@ export default function App() {
 
    return (
       <main>
+         <Header />
          <RentalList rentals={rentals} />
+         <Footer />
       </main>
    )
 }

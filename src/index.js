@@ -5,7 +5,7 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import App from './components/pages/home/App'
 import ErrorPage from './components/pages/error/error'
 import About from './components/pages/about/About'
-import Rental from './components/pages/location/Rental'
+import Rental from './components/pages/rental/Rental'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 
@@ -18,12 +18,10 @@ const router = createBrowserRouter([
    {
       path: '/about',
       element: <About />,
-      errorElement: <ErrorPage />,
    },
    {
       path: '/rental/:id',
       element: <Rental />,
-      errorElement: <ErrorPage />,
    },
 ])
 
