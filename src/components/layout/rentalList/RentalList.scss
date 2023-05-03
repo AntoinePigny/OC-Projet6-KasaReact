@@ -1,11 +1,11 @@
 .rentalList {
    margin-top: 1.25rem;
-}
 
-.rentalList ul {
-   display: grid;
-   grid-template-columns: 1fr;
-   grid-gap: 1.25rem;
+   ul {
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-gap: 1.25rem;
+   }
 }
 
 @media screen and (min-width: 768px) {
@@ -20,14 +20,14 @@
       border-radius: 25px;
       margin-top: 2.75rem;
       padding: 3rem;
-   }
 
-   .rentalList ul {
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-gap: 3.75rem;
-   }
+      ul {
+         grid-template-columns: 1fr 1fr 1fr;
+         grid-gap: 3.75rem;
+      }
 
-   .rentalList li {
-      flex: 1;
+      li {
+         flex: 1;
+      }
    }
 }

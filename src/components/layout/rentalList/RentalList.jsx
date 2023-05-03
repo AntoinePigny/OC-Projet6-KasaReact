@@ -1,6 +1,6 @@
 import React from 'react'
 import RentalCard from '../rentalCard/RentalCard'
-import './RentalList.css'
+import './RentalList.scss'
 
 export default function RentalList({ rentals }) {
    return (
