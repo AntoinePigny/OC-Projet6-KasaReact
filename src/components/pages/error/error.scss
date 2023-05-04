@@ -1,0 +1,51 @@
+.error-wrapper {
+   color: var(--body-clr);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   flex-wrap: wrap;
+   flex: 1;
+   margin-top: 0;
+   //Substract header height
+   height: calc(100vh - var(--header-height));
+
+   > div {
+      text-align: center;
+      position: fixed;
+      top: 30%;
+
+      @media screen and (min-width: 768px) {
+         top: 20%;
+      }
+   }
+
+   h2 {
+      font-size: 6rem;
+
+      @media screen and (min-width: 768px) {
+         font-size: 18rem;
+      }
+   }
+
+   span {
+      line-height: 1.5;
+
+      @media screen and (min-width: 768px) {
+         font-size: 2.25rem;
+         font-weight: 500;
+      }
+   }
+
+   a {
+      position: fixed;
+      bottom: 15%;
+      color: inherit;
+   }
+
+   br {
+      @media screen and (min-width: 768px) {
+         display: none;
+      }
+   }
+}

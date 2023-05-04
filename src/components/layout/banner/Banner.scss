@@ -1,0 +1,39 @@
+.banner {
+   height: 7rem;
+   background-size: cover;
+   background-repeat: no-repeat;
+   border-radius: 10px;
+   display: flex;
+   align-items: center;
+   padding-left: 1rem;
+   background-blend-mode: darken;
+   background: rgba(0, 0, 0, 0.3);
+
+   .home & {
+      background-image: url(../../assets/banner-home.png);
+   }
+
+   .about & {
+      background-image: url(../../assets/banner-about.png);
+      height: 14rem;
+   }
+
+   h2 {
+      white-space: pre-line;
+      font-size: 1.5rem;
+      color: #fff;
+      font-weight: 500;
+   }
+
+   @media screen and (min-width: 768px) {
+      height: 14rem;
+      border-radius: 25px;
+      justify-content: center;
+      background-position: center;
+
+      h2 {
+         white-space: normal;
+         font-size: 3rem;
+      }
+   }
+}
