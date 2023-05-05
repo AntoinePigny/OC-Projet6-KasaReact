@@ -1,6 +1,6 @@
 import React from 'react'
-import Header from '../header/Header'
-import Footer from '../footer/Footer'
+import Header from 'modules/sections/components/header/Header'
+import Footer from 'modules/sections/components/footer/Footer'
 
 export default function MainLayout({ children }) {
    return (

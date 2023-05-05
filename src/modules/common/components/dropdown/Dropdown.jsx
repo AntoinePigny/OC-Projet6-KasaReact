@@ -1,6 +1,6 @@
 import React from 'react'
 import './Dropdown.scss'
-import { ReactComponent as Arrow } from '../../assets/arrow.svg'
+import { ReactComponent as Arrow } from 'modules/common/assets/arrow.svg'
 
 export default function Dropdown({ title, description }) {
    return (

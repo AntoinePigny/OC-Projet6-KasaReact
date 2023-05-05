@@ -1,5 +1,5 @@
 import React from 'react'
-import RentalCard from '../rentalCard/RentalCard'
+import RentalCard from 'modules/common/components/rentalCard/RentalCard'
 import './RentalList.scss'
 
 export default function RentalList({ rentals }) {

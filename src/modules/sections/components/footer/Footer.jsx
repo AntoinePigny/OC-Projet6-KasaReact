@@ -1,5 +1,5 @@
 import React from 'react'
-import { ReactComponent as LogoWhite } from '../../assets/logo-white.svg'
+import { ReactComponent as LogoWhite } from 'modules/common/assets/logo-white.svg'
 import './Footer.scss'
 
 export default function Footer() {

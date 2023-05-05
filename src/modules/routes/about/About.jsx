@@ -1,7 +1,7 @@
 import React from 'react'
-import MainLayout from '../../layout/mainLayout/mainLayout'
-import Banner from '../../layout/banner/Banner'
-import Dropdown from '../../layout/dropdown/Dropdown'
+import MainLayout from 'modules/common/components/mainLayout/mainLayout'
+import Banner from 'modules/common/components/banner/Banner'
+import Dropdown from 'modules/common/components/dropdown/Dropdown'
 import './About.scss'
 
 export default function About() {

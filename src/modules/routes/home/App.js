@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react'
 import './App.css'
-import RentalList from '../../layout/rentalList/RentalList'
-import MainLayout from '../../layout/mainLayout/mainLayout'
-import Banner from '../../layout/banner/Banner'
+import RentalList from 'modules/common/components/rentalList/RentalList'
+import MainLayout from 'modules/common/components/mainLayout/mainLayout'
+import Banner from 'modules/common/components/banner/Banner'
 
 export default function App() {
    const [rentals, setRentals] = useState([])

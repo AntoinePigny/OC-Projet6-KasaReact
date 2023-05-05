@@ -1,5 +1,5 @@
 import React from 'react'
-import Header from '../header/Header'
+import Header from 'modules/sections/components/header/Header'
 
 export default function FooterLessLayout({ children }) {
    return (

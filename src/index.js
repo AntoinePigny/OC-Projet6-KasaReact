@@ -2,10 +2,10 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-import App from './components/pages/home/App'
-import ErrorPage from './components/pages/error/error'
-import About from './components/pages/about/About'
-import Rental from './components/pages/rental/Rental'
+import App from 'modules/routes/home/App'
+import ErrorPage from 'modules/routes/error/error'
+import About from 'modules/routes/about/About'
+import Rental from 'modules/routes/rental/Rental'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 

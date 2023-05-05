@@ -2,7 +2,7 @@ import React from 'react'
 import { useRouteError } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import './error.scss'
-import FooterLessLayout from '../../layout/footerlessLayout/footerlessLayout'
+import FooterLessLayout from 'modules/common/components/footerlessLayout/footerlessLayout'
 
 export default function ErrorPage() {
    const error = useRouteError()

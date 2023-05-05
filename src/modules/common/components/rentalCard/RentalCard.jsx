@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import './RentalCard.css'
+import './RentalCard.scss'
 
 export default function RentalCard({ rental }) {
    const { id, title, cover } = rental
