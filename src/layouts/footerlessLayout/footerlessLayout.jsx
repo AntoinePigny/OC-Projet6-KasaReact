@@ -1,7 +1,7 @@
 import React from 'react'
-import Header from 'modules/sections/components/header/Header'
+import { Header } from 'modules/sections/components/'
 
-export default function FooterLessLayout({ children }) {
+export default function layout({ children }) {
    return (
       <div className='container'>
          <Header />

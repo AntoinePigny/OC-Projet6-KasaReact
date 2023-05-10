@@ -1,8 +1,7 @@
 import React from 'react'
-import Header from 'modules/sections/components/header/Header'
-import Footer from 'modules/sections/components/footer/Footer'
+import { Header, Footer } from 'modules/sections/components'
 
-export default function MainLayout({ children }) {
+export default function layout({ children }) {
    return (
       <>
          <div className='container'>

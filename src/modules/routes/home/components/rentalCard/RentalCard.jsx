@@ -6,7 +6,7 @@ export default function RentalCard({ rental }) {
    const { id, title, cover } = rental
    return (
       <li>
-         <Link className='rentalCard'>
+         <Link to={`/rental/${id}`} className='rentalCard'>
             <div className='gradient'>
                <img src={cover} alt={title} />
             </div>

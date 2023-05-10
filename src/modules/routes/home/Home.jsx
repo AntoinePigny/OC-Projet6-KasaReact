@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react'
-import './App.css'
-import RentalList from 'modules/common/components/rentalList/RentalList'
-import MainLayout from 'modules/common/components/mainLayout/mainLayout'
-import Banner from 'modules/common/components/banner/Banner'
+import './Home.scss'
+import RentalList from 'modules/routes/home/components/rentalList/RentalList'
+import { Banner } from 'modules/common/components'
 
 export default function App() {
    const [rentals, setRentals] = useState([])
@@ -22,11 +21,9 @@ export default function App() {
    }
 
    return (
-      <MainLayout>
-         <main className='home'>
-            <Banner title={`Chez vous,\n partout et ailleurs`} />
-            <RentalList rentals={rentals} />
-         </main>
-      </MainLayout>
+      <main className='home'>
+         <Banner title={`Chez vous,\n partout et ailleurs`} />
+         <RentalList rentals={rentals} />
+      </main>
    )
 }

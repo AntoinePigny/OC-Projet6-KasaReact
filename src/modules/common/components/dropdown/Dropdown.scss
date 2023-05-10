@@ -20,6 +20,11 @@
    svg {
       transform: rotate(0deg);
       transition: transform 300ms;
+      width: 1rem;
+
+      @media screen and (min-width: 768px) {
+         width: 1.5rem;
+      }
    }
 
    &[open] svg {
@@ -33,7 +38,8 @@
       height: 100%;
    }
 
-   p {
+   p,
+   ul {
       line-height: 1.5;
       padding: 1rem 0.5rem;
       font-size: 0.75rem;
