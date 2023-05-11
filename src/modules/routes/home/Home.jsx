@@ -3,6 +3,7 @@ import './Home.scss'
 import RentalList from 'modules/routes/home/components/rentalList/RentalList'
 import { Banner } from 'modules/common/components'
 
+//Fetch avec useState
 export default function App() {
    const [rentals, setRentals] = useState([])
    const [isReady, setIsReady] = useState(false)

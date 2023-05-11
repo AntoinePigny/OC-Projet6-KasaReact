@@ -1,36 +1,24 @@
-import React, { useState, useEffect } from 'react'
-import { useParams } from 'react-router-dom'
-import { Rating, Owner, Tags } from 'modules/routes/rental/components'
+import { useLoaderData } from 'react-router-dom'
+import { Rating, Owner, Tags, Carousel } from 'modules/routes/rental/components'
 import { Dropdown } from 'modules/common/components'
-import { redirect } from 'react-router-dom'
 import './Rental.scss'
 
-export default function Rental() {
-   const [rental, setRental] = useState()
-   const [isReady, setIsReady] = useState(false)
-   const { id } = useParams()
-
-   useEffect(() => {
-      fetch('/data/logements.json')
-         .then((response) => response.json())
-         .then((result) => {
-            setIsReady(true)
-            const rental = result.find((data) => data.id === id)
-            setRental(rental)
-         })
-   }, [id])
-
-   if (!isReady) {
-      return <p>Loading</p>
-   }
-
-   return isReady && rental ? renderRental(rental) : redirect('/error')
+//Fetch avec Loader
+export async function rentalLoader({ params }) {
+   const { id } = params
+   const res = await fetch('/data/logements.json')
+   const result = await res.json()
+   console.log(result)
+   const rental = await result.find((data) => data.id === id)
+   return rental
 }
 
-function renderRental(rental) {
-   const { title, location, host, description, equipments, rating, tags } = rental
+export default function Rental() {
+   const rental = useLoaderData()
+   const { title, location, host, description, equipments, rating, tags, pictures } = rental
    return (
       <main className='rental'>
+         <Carousel pictures={pictures} />
          <section className='rental-details'>
             <div>
                <h2>{title}</h2>
@@ -49,3 +37,25 @@ function renderRental(rental) {
       </main>
    )
 }
+/* Ancienne fonction utilisant le useState
+
+   export default function Rental() {
+   const [rental, setRental] = useState()
+   const [isReady, setIsReady] = useState(false)
+   const { id } = useParams()
+
+   useEffect(() => {
+      fetch('/data/logements.json')
+         .then((response) => response.json())
+         .then((result) => {
+            setIsReady(true)
+            const rental = result.find((data) => data.id === id)
+            setRental(rental)
+         })
+   }, [id])
+
+   if (!isReady) {
+      return <p>Loading</p>
+   }
+   return isReady && rental ? renderRental(rental) : console.log('error')
+} */

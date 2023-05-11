@@ -1,13 +1,9 @@
 import React from 'react'
-import { useRouteError } from 'react-router-dom'
 import { Link } from 'react-router-dom'
 import './error.scss'
 import FooterLessLayout from 'layouts/footerlessLayout/footerlessLayout'
 
 export default function ErrorPage() {
-   const error = useRouteError()
-   console.error(error)
-
    return (
       <FooterLessLayout>
          <main className='error-wrapper'>
