@@ -21,8 +21,10 @@ export default function Rental() {
          <Carousel pictures={pictures} />
          <section className='rental-details'>
             <div>
-               <h2>{title}</h2>
-               <p>{location}</p>
+               <div>
+                  <h2>{title}</h2>
+                  <p>{location}</p>
+               </div>
                <Tags tags={tags} />
             </div>
             <div>
