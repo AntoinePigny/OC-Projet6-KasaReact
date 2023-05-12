@@ -2,11 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom'
-import App from 'modules/routes/app/App'
-import Home from 'modules/routes/home/Home.jsx'
-import ErrorPage from 'modules/routes/error/error.jsx'
-import About from 'modules/routes/about/About'
-import Rental, { rentalLoader } from 'modules/routes/rental/Rental'
+import { App, Home, ErrorPage, About, Rental, rentalLoader } from 'modules/routes'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 

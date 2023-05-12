@@ -1,0 +1,5 @@
+export { default as Rental, rentalLoader } from 'modules/routes/rental/Rental'
+export { default as About } from 'modules/routes/about/About'
+export { default as App } from 'modules/routes/app/App'
+export { default as Home } from 'modules/routes/home/Home'
+export { default as ErrorPage } from 'modules/routes/error/error'

@@ -8,7 +8,6 @@ export async function rentalLoader({ params }) {
    const { id } = params
    const res = await fetch('/data/logements.json')
    const result = await res.json()
-   console.log(result)
    const rental = await result.find((data) => data.id === id)
    return rental
 }

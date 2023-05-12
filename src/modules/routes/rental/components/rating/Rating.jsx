@@ -6,8 +6,6 @@ import './Rating.scss'
 export default function Rating({ rating }) {
    const stars = Array(5).fill(null)
    return (
-      <div className='rating'>
-         {stars.map((undefined, i) => (i < rating ? <FilledStar key={i} /> : <EmptyStar key={i} />))}
-      </div>
+      <div className='rating'>{stars.map((_, i) => (i < rating ? <FilledStar key={i} /> : <EmptyStar key={i} />))}</div>
    )
 }
