@@ -2,12 +2,27 @@ import React, { useState } from 'react'
 import './Carousel.scss'
 import { ArrowButton } from '..'
 
+function getNewIndex(index, length) {
+   if (index < 0) {
+      return length - 1
+   }
+
+   if (index >= length) {
+      return 0
+   }
+
+   return index
+}
+
 export default function Carousel({ pictures }) {
    const [currentIndex, setCurrentIndex] = useState(0)
    if (pictures.length > 1) {
       return (
          <div className='carousel-container'>
-            <ArrowButton className='prevBtn' event={goToPrevious} />
+            <ArrowButton
+               className='prevBtn'
+               event={() => setCurrentIndex(getNewIndex(currentIndex - 1, pictures.length))}
+            />
             <div className='carousel-inner'>
                {pictures.map((image, i) => (
                   <img key={i} src={image} alt={`Photo numéro` + i} className={i === currentIndex ? 'visible' : ''} />
@@ -18,7 +33,10 @@ export default function Carousel({ pictures }) {
                   ${currentIndex + 1}/${pictures.length}
                `}
             </span>
-            <ArrowButton className='nextBtn' event={goToNext} />
+            <ArrowButton
+               className='nextBtn'
+               event={() => setCurrentIndex(getNewIndex(currentIndex + 1, pictures.length))}
+            />
          </div>
       )
    } else {
@@ -36,16 +54,5 @@ export default function Carousel({ pictures }) {
             </div>
          </div>
       )
-   }
-
-   function goToPrevious() {
-      const isFirstSlide = currentIndex === 0
-      const newIndex = isFirstSlide ? pictures.length - 1 : currentIndex - 1
-      setCurrentIndex(newIndex)
-   }
-   function goToNext() {
-      const isLastSlide = currentIndex === pictures.length - 1
-      const newIndex = isLastSlide ? 0 : currentIndex + 1
-      setCurrentIndex(newIndex)
    }
 }
