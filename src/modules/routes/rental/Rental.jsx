@@ -8,7 +8,6 @@ export async function rentalLoader({ params }) {
    const { id } = params
    const res = await fetch('/data/logements.json')
    const result = await res.json()
-   console.log(result)
    const rental = await result.find((data) => data.id === id)
    return rental
 }
@@ -18,7 +17,7 @@ export default function Rental() {
    const { title, location, host, description, equipments, rating, tags, pictures } = rental
    return (
       <main className='rental'>
-         <Carousel pictures={pictures} />
+         <Carousel pictures={pictures} parentWidth={100} />
          <section className='rental-details'>
             <div>
                <div>
@@ -39,7 +38,7 @@ export default function Rental() {
       </main>
    )
 }
-/* Ancienne fonction utilisant le useState
+/* Old function using useState
 
    export default function Rental() {
    const [rental, setRental] = useState()

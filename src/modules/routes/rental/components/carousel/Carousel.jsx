@@ -2,15 +2,26 @@ import React, { useState } from 'react'
 import './Carousel.scss'
 import { ArrowButton } from '..'
 
-export default function Carousel({ pictures }) {
+export default function Carousel({ pictures, parentWidth }) {
    const [currentIndex, setCurrentIndex] = useState(0)
+   const picturesContainerAnimationStyles = {
+      transition: 'transform ease-out 0.3s',
+      width: `${parentWidth * pictures.length}%`,
+      transform: `translateX(${-(currentIndex * parentWidth)}%)`,
+   }
+
    if (pictures.length > 1) {
       return (
          <div className='carousel-container'>
             <ArrowButton className='prevBtn' event={goToPrevious} />
-            <div className='carousel-inner'>
+            <div className='carousel-inner' style={picturesContainerAnimationStyles}>
                {pictures.map((image, i) => (
-                  <img key={i} src={image} alt={`Photo numéro` + i} className={i === currentIndex ? 'visible' : ''} />
+                  <img
+                     key={i}
+                     src={image}
+                     /*Commented : no animation version */
+                     alt={`Photo numéro` + i} /*className={i === currentIndex ? 'visible' : ''}*/
+                  />
                ))}
             </div>
             <span className='currentCount'>
