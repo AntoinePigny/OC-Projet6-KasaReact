@@ -1,12 +1,10 @@
 @keyframes animate {
    from {
       grid-template-rows: 0fr;
-      background-color: none;
       padding-block: 0;
    }
    to {
       grid-template-rows: 1fr;
-      background-color: #f7f7f7;
       padding-block: var(--div-padding-y);
    }
 }
@@ -56,6 +54,8 @@
    }
 
    &[open] {
+      background-color: #f7f7f7;
+
       > div {
          animation: animate 1s 0s 1 normal forwards;
       }
