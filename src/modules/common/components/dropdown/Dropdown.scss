@@ -1,5 +1,18 @@
+@keyframes animate {
+   from {
+      grid-template-rows: 0fr;
+      background-color: none;
+      padding-block: 0;
+   }
+   to {
+      grid-template-rows: 1fr;
+      background-color: #f7f7f7;
+      padding-block: var(--div-padding-y);
+   }
+}
 .dropdown {
-   overflow: hidden;
+   //overflow: hidden;
+   position: relative;
    summary {
       border-radius: 5px;
       background-color: var(--body-clr);
@@ -27,26 +40,38 @@
       }
    }
 
-   &[open] svg {
-      transform: rotate(180deg);
-   }
-
    > div {
+      --div-padding-y: 1rem;
+      padding-inline: 0.5rem;
       color: var(--body-clr);
       border-radius: 0 0 5px 5px;
-      background-color: #f7f7f7;
       height: 100%;
+      display: grid;
+      grid-template-rows: 0fr;
+
+      @media screen and (min-width: 768px) {
+         --div-padding-y: 1.5rem 1rem;
+         padding-inline: 1rem;
+      }
+   }
+
+   &[open] {
+      > div {
+         animation: animate 1s 0s 1 normal forwards;
+      }
+      svg {
+         transform: rotate(180deg);
+      }
    }
 
    p,
    ul {
+      overflow: hidden;
       line-height: 1.5;
-      padding: 1rem 0.5rem;
       font-size: 0.75rem;
 
       @media screen and (min-width: 768px) {
          font-size: 1.5rem;
-         padding: 1.5rem 1rem 1rem;
       }
    }
 }
