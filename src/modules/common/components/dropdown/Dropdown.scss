@@ -9,9 +9,9 @@
    }
 }
 .dropdown {
-   //overflow: hidden;
    position: relative;
    summary {
+      cursor: pointer;
       border-radius: 5px;
       background-color: var(--body-clr);
       display: flex;

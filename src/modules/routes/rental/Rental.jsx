@@ -8,8 +8,12 @@ export async function rentalLoader({ params }) {
    const { id } = params
    const res = await fetch('/data/logements.json')
    const result = await res.json()
-   const rental = await result.find((data) => data.id === id)
-   return rental
+   const rental = result.find((data) => data.id === id)
+   if (!rental) {
+      throw new Response('Not Found', { status: 404 })
+   } else {
+      return rental
+   }
 }
 
 export default function Rental() {
@@ -38,25 +42,3 @@ export default function Rental() {
       </main>
    )
 }
-/* Ancienne fonction utilisant le useState
-
-   export default function Rental() {
-   const [rental, setRental] = useState()
-   const [isReady, setIsReady] = useState(false)
-   const { id } = useParams()
-
-   useEffect(() => {
-      fetch('/data/logements.json')
-         .then((response) => response.json())
-         .then((result) => {
-            setIsReady(true)
-            const rental = result.find((data) => data.id === id)
-            setRental(rental)
-         })
-   }, [id])
-
-   if (!isReady) {
-      return <p>Loading</p>
-   }
-   return isReady && rental ? renderRental(rental) : console.log('error')
-} */
